@@ -8,6 +8,7 @@ app.use(express.json());
 app.post('/cad', features.cadastro);
 app.get('/info', features.info);
 app.get('/info/:cod', features.Codinfo);
+app.put('/cad/:cod', features.att)
 
 app.listen(3030, () =>{
     console.log('rodando pai...');

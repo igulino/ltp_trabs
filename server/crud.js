@@ -35,7 +35,22 @@ module.exports = {
 
     },
 
-
+    async att(req, res){
+        try {
+            const { cod } = req.params;
+            const { qtda } = req.body;
+            
+            console.log(cod);
+            console.log(qtda);
+            res.json(await knex('produtos').where("codpro", "=", cod).update("qtda", qtda));
+            res.status(200)
+        } catch (error) {
+            res.status(400).send('erro kk')
+            console.log(error);
+        }
+     
+        
+    }
 
 
 }
