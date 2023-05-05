@@ -56,21 +56,12 @@ module.exports = {
                 console.log('elemento', element);
                 console.log('index', index);
                 if (element != undefined) {
-                    var id
-                    if (index == 0) {
-                        id = "qtda"
-                    }else
-                    if (index == 1) {
-                        id = "custo"
-                    }else
-                    if (index == 2) {
-                        id = "descri"
-                    }else 
-                    if (index == 3) {
-                        id = "preco"
-                    }
+                    const DoList = [{id: "qtda", index: 0}, {id: "custo", index: 1}, {id: "descri", index: 2}, {id: "preco", index: 3}];
+                    const takeList = DoList.find(enc => index == enc.index)
+                    console.log("this is takelist", takeList.id);
+          
                     const nike = element;
-                    res.json(await knex('produtos').where("codpro", "=", cod).update(`${id}`, nike));
+                    res.json(await knex('produtos').where("codpro", "=", cod).update(`${takeList.id}`, nike));
                 }
                 index++
             }
@@ -93,6 +84,6 @@ module.exports = {
             res.send('deuruimkk')
             console.log(error);
         }
-    }
+    },
 
 } 
