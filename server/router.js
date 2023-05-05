@@ -16,6 +16,10 @@ app.delete('/del/:delet', features.del);
 //crud clientes
 app.post('/cli/cad', cliFeatures.cliCad);
 app.get('/infocli', cliFeatures.cliinfo);
+app.put('/cliatt/:cli', cliFeatures.cliatt);
+app.delete('/clidelet/:delet', cliFeatures.clidelete);
+
+//app.delete('/clidel/:delet', )
 
 
 //rodando em...
